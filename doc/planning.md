@@ -1,7 +1,7 @@
 # Planning
 
 - [x] Initialiser un projet Ember à jour
-- [ ] Lister les titres de tous les projets
+- [x] Lister les titres de tous les projets
 - [ ] Différencier la liste des projets en ligne et des projets financiés : afficher le titre "X projects online" (X étant le nombre de projets) et "Financed projects"
 
 Pour les projets en ligne, afficher :
