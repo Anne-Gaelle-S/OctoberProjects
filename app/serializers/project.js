@@ -11,6 +11,7 @@ export default class ProjectSerializer extends JSONAPISerializer {
         id: project.id,
         attributes: {
           name: project.name,
+          status: project.status,
         },
       };
     });

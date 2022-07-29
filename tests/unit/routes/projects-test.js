@@ -9,13 +9,20 @@ module('Unit | Route | projects', function (hooks) {
     // given
     const route = this.owner.lookup('route:projects');
     const store = this.owner.lookup('service:store');
-    const allProjects = Symbol('tous les projets');
+    const financedProjet1 = { name: 'pro1', status: 'completed' };
+    const financedProjet2 = { name: 'pro2', status: 'completed' };
+    const onlineProject1 = { name: 'pro3', status: 'online' };
+    const allProjects = [financedProjet1, onlineProject1, financedProjet2];
     sinon.stub(store, 'findAll').withArgs('project').resolves(allProjects);
 
     // when
     const result = await route.model();
 
     // then
-    assert.strictEqual(result, allProjects);
+    assert.deepEqual(result.onlineProjects, [onlineProject1]);
+    assert.deepEqual(result.financedProjects, [
+      financedProjet1,
+      financedProjet2,
+    ]);
   });
 });

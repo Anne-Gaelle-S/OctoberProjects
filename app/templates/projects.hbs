@@ -1,7 +1,13 @@
 {{page-title "Projects"}}
 
-{{#each @model as |project|}}
-  <h2>{{project.name}}</h2>
+<h2>{{@model.onlineProjects.length}} projects online</h2>
+{{#each @model.onlineProjects as |onlineProject|}}
+  <h3>{{onlineProject.name}}</h3>
+{{/each}}
+
+<h2>Financed projects</h2>
+{{#each @model.financedProjects as |financedProject|}}
+  <h3>{{financedProject.name}}</h3>
 {{/each}}
 
 {{outlet}}

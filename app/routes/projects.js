@@ -6,6 +6,14 @@ export default class ProjectsRoute extends Route {
 
   async model() {
     const allProjects = await this.store.findAll('project');
-    return allProjects;
+
+    const onlineProjects = allProjects.filter(
+      (project) => project.status === 'online'
+    );
+    const financedProjects = allProjects.filter(
+      (project) => project.status === 'completed'
+    );
+
+    return { onlineProjects, financedProjects };
   }
 }
