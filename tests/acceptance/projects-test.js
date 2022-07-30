@@ -23,12 +23,14 @@ module('Acceptance | authenticated | team', function (hooks) {
       status: 'online',
       business: { address: { country: 'en' } },
       onlineDate: onelineDate1,
+      grade: 'A+',
     });
     this.server.create('project', {
       name: 'Second projet en ligne',
       status: 'online',
       business: { address: { country: 'nl' } },
       onlineDate: onelineDate2,
+      grade: 'C',
     });
 
     // when
@@ -40,6 +42,8 @@ module('Acceptance | authenticated | team', function (hooks) {
       .exists();
     assert.dom(screen.getByText('Premier projet en ligne')).exists();
     assert.dom(screen.getByText('Second projet en ligne')).exists();
+    assert.dom(screen.getByText('A+')).exists();
+    assert.dom(screen.getByText('C')).exists();
     assert.dom(screen.getByText('5 months ago')).exists();
     assert.dom(screen.getByText('4 months ago')).exists();
     assert
@@ -71,12 +75,14 @@ module('Acceptance | authenticated | team', function (hooks) {
       status: 'completed',
       business: { address: { country: 'fr' } },
       onlineDate: onelineDate1,
+      grade: 'A',
     });
     this.server.create('project', {
       name: 'Second projet financé',
       status: 'completed',
       business: { address: { country: 'en' } },
       onlineDate: onelineDate2,
+      grade: 'B-',
     });
 
     // when
@@ -88,6 +94,8 @@ module('Acceptance | authenticated | team', function (hooks) {
       .exists();
     assert.dom(screen.getByText('Premier projet financé')).exists();
     assert.dom(screen.getByText('Second projet financé')).exists();
+    assert.dom(screen.getByText('A')).exists();
+    assert.dom(screen.getByText('B-')).exists();
     assert.dom(screen.getByText('1 months ago')).exists();
     assert.dom(screen.getByText('2 months ago')).exists();
     assert

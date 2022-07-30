@@ -21,6 +21,7 @@ module('Unit | Serializer | project', function (hooks) {
             illustration: { url: 'illustration/1/' },
             business: { address: { country: 'nl' } },
             onlineDate: onlineDate1,
+            grade: 'A+',
           },
           {
             id: 'b2',
@@ -28,6 +29,7 @@ module('Unit | Serializer | project', function (hooks) {
             illustration: { url: 'illustration/2/' },
             business: { address: { country: 'fr' } },
             onlineDate: onlineDate2,
+            grade: 'B-',
           },
         ],
       };
@@ -54,6 +56,7 @@ module('Unit | Serializer | project', function (hooks) {
               illustrationUrlSuffix: 'illustration/1/',
               businessAddressCountryCode: 'nl',
               onlineDate: onlineDate1,
+              grade: 'A+',
             },
             relationships: {},
           },
@@ -65,6 +68,7 @@ module('Unit | Serializer | project', function (hooks) {
               illustrationUrlSuffix: 'illustration/2/',
               businessAddressCountryCode: 'fr',
               onlineDate: onlineDate2,
+              grade: 'B-',
             },
             relationships: {},
           },

@@ -15,6 +15,7 @@ export default class ProjectSerializer extends JSONAPISerializer {
           'illustration-url-suffix': project.illustration?.url,
           'business-address-country-code': project.business?.address?.country,
           'online-date': project.onlineDate,
+          grade: project.grade,
         },
       };
     });

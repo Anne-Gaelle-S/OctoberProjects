@@ -10,6 +10,7 @@ export default class ProjectModel extends Model {
   @attr() illustrationUrlSuffix;
   @attr() businessAddressCountryCode;
   @attr() onlineDate;
+  @attr() grade;
 
   get illustrationUrl() {
     return `${ENV.APP.ILLUSTRATION_URL_PREFIX}${this.illustrationUrlSuffix}`;
