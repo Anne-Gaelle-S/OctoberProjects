@@ -30,6 +30,7 @@
     "@testing-library/dom": "^8.16.0",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
+    "dayjs": "^1.11.4",
     "ember-auto-import": "^2.4.2",
     "ember-cli": "~4.6.0",
     "ember-cli-app-version": "^5.0.0",
