@@ -11,15 +11,24 @@ module('Acceptance | authenticated | team', function (hooks) {
   setupMirage(hooks);
 
   test('it show oneline projects names', async function (assert) {
+    const dateService = this.owner.lookup('service:date');
+    const now = dayjs('2022-06-02');
+    dateService.now = sinon.stub().returns(now);
+
+    const onelineDate1 = new Date('2022-01-01T00:00:00Z');
+    const onelineDate2 = new Date('2022-02-01T00:00:00Z');
+
     this.server.create('project', {
       name: 'Premier projet en ligne',
       status: 'online',
       business: { address: { country: 'en' } },
+      onlineDate: onelineDate1,
     });
     this.server.create('project', {
       name: 'Second projet en ligne',
       status: 'online',
       business: { address: { country: 'nl' } },
+      onlineDate: onelineDate2,
     });
 
     // when
@@ -31,6 +40,8 @@ module('Acceptance | authenticated | team', function (hooks) {
       .exists();
     assert.dom(screen.getByText('Premier projet en ligne')).exists();
     assert.dom(screen.getByText('Second projet en ligne')).exists();
+    assert.dom(screen.getByText('5 months ago')).exists();
+    assert.dom(screen.getByText('4 months ago')).exists();
     assert
       .dom(
         screen.getByAltText(
@@ -49,15 +60,23 @@ module('Acceptance | authenticated | team', function (hooks) {
 
   test('it show financed projects names', async function (assert) {
     // given
+    const dateService = this.owner.lookup('service:date');
+    const now = dayjs('2022-06-03');
+    dateService.now = sinon.stub().returns(now);
+
+    const onelineDate1 = new Date('2022-05-01T00:00:00Z');
+    const onelineDate2 = new Date('2022-04-02T00:00:00Z');
     this.server.create('project', {
       name: 'Premier projet financé',
       status: 'completed',
       business: { address: { country: 'fr' } },
+      onlineDate: onelineDate1,
     });
     this.server.create('project', {
       name: 'Second projet financé',
       status: 'completed',
       business: { address: { country: 'en' } },
+      onlineDate: onelineDate2,
     });
 
     // when
@@ -69,6 +88,8 @@ module('Acceptance | authenticated | team', function (hooks) {
       .exists();
     assert.dom(screen.getByText('Premier projet financé')).exists();
     assert.dom(screen.getByText('Second projet financé')).exists();
+    assert.dom(screen.getByText('1 months ago')).exists();
+    assert.dom(screen.getByText('2 months ago')).exists();
     assert
       .dom(
         screen.getByAltText(

@@ -8,7 +8,7 @@ Pour les projets en ligne, afficher :
 - [x] l'illustration de présentation
 - [x] le drapeau de l'origine du projet
 - [ ] note d'indice de confiance
-- [ ] la date de création
+- [x] la date de création
 - [ ] le pourcentage de ?
 - [ ] la description
 - [ ] la durée et le coût
@@ -18,6 +18,6 @@ Pour les projets financés par leur status, afficher :
 - [x] l'illustration de présentation
 - [x] le drapeau de l'origine du projet
 - [ ] note d'indice de confiance
-- [ ] la date de création
+- [x] la date de création
 - [ ] le pourcentage de ?
 - [ ] la durée et le coût

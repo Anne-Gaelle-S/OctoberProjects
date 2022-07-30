@@ -11,6 +11,8 @@ module('Unit | Serializer | project', function (hooks) {
 
       const store = this.owner.lookup('service:store');
       const primaryModelClass = {};
+      const onlineDate1 = new Date('2022-02-02');
+      const onlineDate2 = new Date('2022-03-03');
       const payload = {
         projects: [
           {
@@ -18,12 +20,14 @@ module('Unit | Serializer | project', function (hooks) {
             name: 'Nom du projet',
             illustration: { url: 'illustration/1/' },
             business: { address: { country: 'nl' } },
+            onlineDate: onlineDate1,
           },
           {
             id: 'b2',
             name: 'Autre projet',
             illustration: { url: 'illustration/2/' },
             business: { address: { country: 'fr' } },
+            onlineDate: onlineDate2,
           },
         ],
       };
@@ -49,6 +53,7 @@ module('Unit | Serializer | project', function (hooks) {
               name: 'Nom du projet',
               illustrationUrlSuffix: 'illustration/1/',
               businessAddressCountryCode: 'nl',
+              onlineDate: onlineDate1,
             },
             relationships: {},
           },
@@ -59,6 +64,7 @@ module('Unit | Serializer | project', function (hooks) {
               name: 'Autre projet',
               illustrationUrlSuffix: 'illustration/2/',
               businessAddressCountryCode: 'fr',
+              onlineDate: onlineDate2,
             },
             relationships: {},
           },
