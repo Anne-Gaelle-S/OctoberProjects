@@ -24,6 +24,9 @@ module('Integration | Component | financed-project-card', function (hooks) {
       businessAddressCountryCode: 'en',
       onlineDate: new Date('2022-01-01'),
       grade: 'A+',
+      rate: 5,
+      loanDuration: 24,
+      amount: 220000,
     });
     this.set('project', project);
 
@@ -33,11 +36,13 @@ module('Integration | Component | financed-project-card', function (hooks) {
     );
 
     // then
-    assert.dom(screen.getByRole('heading', { name: 'Super projet' })).exists();
-    assert.dom(screen.getByText('A+')).exists();
-    assert.dom(screen.getByText('2 months ago')).exists();
     assert
       .dom(screen.getByAltText("Super projet's business country flag (en)"))
       .exists();
+    assert.dom(screen.getByRole('heading', { name: 'Super projet' })).exists();
+    assert.dom(screen.getByText('5% • 24 months')).exists();
+    assert.dom(screen.getByText('€ 220000')).exists();
+    assert.dom(screen.getByText('2 months ago')).exists();
+    assert.dom(screen.getByText('A+')).exists();
   });
 });

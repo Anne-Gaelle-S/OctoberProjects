@@ -19,5 +19,5 @@ Pour les projets financés par leur status, afficher :
 - [x] le drapeau de l'origine du projet
 - [x] note d'indice de confiance
 - [x] la date de création
-- [ ] le pourcentage de ?
-- [ ] la durée et le coût
+- [x] le pourcentage de ?
+- [x] la durée et le coût
