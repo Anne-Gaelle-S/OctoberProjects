@@ -1,9 +1,11 @@
 {{page-title "Projects"}}
 
-<h2>{{@model.onlineProjects.length}} projects online</h2>
-{{#each @model.onlineProjects as |onlineProject|}}
-  <OnlineProjectCard @onlineProject={{onlineProject}} />
-{{/each}}
+<h2 class="projects__title">{{@model.onlineProjects.length}} projects online</h2>
+<div class="projects__online-projects-container">
+  {{#each @model.onlineProjects as |onlineProject|}}
+    <OnlineProjectCard @onlineProject={{onlineProject}} />
+  {{/each}}
+</div>
 
 <h2>Financed projects</h2>
 {{#each @model.financedProjects as |financedProject|}}

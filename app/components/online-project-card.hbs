@@ -1,19 +1,36 @@
-<img src={{@onlineProject.illustrationUrl}} alt="" role="none" />
-<img
-  src="{{this.rootURL}}/icon-flag-{{@onlineProject.businessAddressCountryCode}}.svg"
-  alt="{{@onlineProject.name}}'s business country flag ({{@onlineProject.businessAddressCountryCode}})"
-/>
+<div class="online-project-card">
+  <img class="online-project-card__illustration" src={{@onlineProject.illustrationUrl}} alt="" role="none" />
+  <div class="online-project-card-information-section">
+    <img
+      class="online-project-card-information-section__flag"
+      src="{{this.rootURL}}/icon-flag-{{@onlineProject.businessAddressCountryCode}}.svg"
+      alt="{{@onlineProject.name}}'s business country flag ({{@onlineProject.businessAddressCountryCode}})"
+    />
 
-<h3>{{@onlineProject.name}}</h3>
-{{@onlineProject.description}}
+    <header class="online-project-card-information-section__header">
+      <h3>{{@onlineProject.name}}</h3>
+      {{@onlineProject.description}}
+    </header>
 
-<p>{{@onlineProject.rate}} %</p>
-<p>{{@onlineProject.loanDuration}} months • € {{@onlineProject.amount}}</p>
-<p>{{@onlineProject.grade}}</p>
+    <div class="online-project-card-information-section-centered-section">
+      <p class="online-project-card-information-section-centered-section__rate">
+        {{@onlineProject.rate}} %
+      </p>
+      <p class="online-project-card-information-section-centered-section__loan">
+        {{@onlineProject.loanDuration}} months • € {{@onlineProject.amount}}
+      </p>
+      <p class="online-project-card-information-section-centered-section__grade">
+        {{@onlineProject.grade}}
+      </p>
+    </div>
 
-{{#if @onlineProject.isFullyFinanced}}
-  <LinkTo @route="project" @model={{@onlineProject.id}}>See the project</LinkTo>
-{{else}}
-  <LinkTo @route="project" @model={{@onlineProject.id}}>€ {{@onlineProject.restToFinance}} to finance</LinkTo>
-{{/if}}
-<p>{{@onlineProject.durationSinceOnlineInMonths}} months ago</p>
+    <div class="online-project-card-information-section__right-section">
+      {{#if @onlineProject.isFullyFinanced}}
+        <LinkTo @route="project" @model={{@onlineProject.id}}>See the project</LinkTo>
+      {{else}}
+        <LinkTo @route="project" @model={{@onlineProject.id}}>€ {{@onlineProject.restToFinance}} to finance</LinkTo>
+      {{/if}}
+      <p>{{@onlineProject.durationSinceOnlineInMonths}} months ago</p>
+    </div>
+  </div>
+</div>

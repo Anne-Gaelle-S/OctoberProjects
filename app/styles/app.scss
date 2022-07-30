@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+@import 'normalize';
+
+@import "globals/colors";
+
+@import "pages/projects";
+
+@import "components/online-project-card";
+
+html {
+  background-color: $light-grey;
+  color: $soft-black;
+}
+
+* {
+  box-sizing: border-box;
+}
