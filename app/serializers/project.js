@@ -12,6 +12,7 @@ export default class ProjectSerializer extends JSONAPISerializer {
         attributes: {
           name: project.name,
           status: project.status,
+          'illustration-url-suffix': project.illustration?.url,
         },
       };
     });

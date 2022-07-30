@@ -13,8 +13,16 @@ module('Unit | Serializer | project', function (hooks) {
       const primaryModelClass = {};
       const payload = {
         projects: [
-          { id: 'a1', name: 'Nom du projet' },
-          { id: 'b2', name: 'Autre projet' },
+          {
+            id: 'a1',
+            name: 'Nom du projet',
+            illustration: { url: 'illustration/1/' },
+          },
+          {
+            id: 'b2',
+            name: 'Autre projet',
+            illustration: { url: 'illustration/2/' },
+          },
         ],
       };
       const id = null;
@@ -37,6 +45,7 @@ module('Unit | Serializer | project', function (hooks) {
             id: 'a1',
             attributes: {
               name: 'Nom du projet',
+              illustrationUrlSuffix: 'illustration/1/',
             },
             relationships: {},
           },
@@ -45,6 +54,7 @@ module('Unit | Serializer | project', function (hooks) {
             id: 'b2',
             attributes: {
               name: 'Autre projet',
+              illustrationUrlSuffix: 'illustration/2/',
             },
             relationships: {},
           },

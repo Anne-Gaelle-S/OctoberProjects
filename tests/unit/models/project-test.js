@@ -12,4 +12,20 @@ module('Unit | Model | project', function (hooks) {
     // when & then
     assert.strictEqual(model.name, 'super projet');
   });
+
+  module('#illustrationUrl', function () {
+    test('it should build illustration url', function (assert) {
+      // given
+      const store = this.owner.lookup('service:store');
+      const model = store.createRecord('project', {
+        illustrationUrlSuffix: 'some/suffix',
+      });
+
+      // when & then
+      assert.strictEqual(
+        model.illustrationUrl,
+        'https://illustration/some/suffix'
+      );
+    });
+  });
 });

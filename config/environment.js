@@ -16,6 +16,7 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      ILLUSTRATION_URL_PREFIX: process.env.ILLUSTRATION_URL_PREFIX || '',
     },
   };
 
@@ -30,6 +31,8 @@ module.exports = function (environment) {
   if (environment === 'test') {
     // Testem prefers this...
     ENV.locationType = 'none';
+
+    ENV.APP.ILLUSTRATION_URL_PREFIX = 'https://illustration/';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
