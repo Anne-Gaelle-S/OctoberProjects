@@ -17,11 +17,13 @@ module('Unit | Serializer | project', function (hooks) {
             id: 'a1',
             name: 'Nom du projet',
             illustration: { url: 'illustration/1/' },
+            business: { address: { country: 'nl' } },
           },
           {
             id: 'b2',
             name: 'Autre projet',
             illustration: { url: 'illustration/2/' },
+            business: { address: { country: 'fr' } },
           },
         ],
       };
@@ -46,6 +48,7 @@ module('Unit | Serializer | project', function (hooks) {
             attributes: {
               name: 'Nom du projet',
               illustrationUrlSuffix: 'illustration/1/',
+              businessAddressCountryCode: 'nl',
             },
             relationships: {},
           },
@@ -55,6 +58,7 @@ module('Unit | Serializer | project', function (hooks) {
             attributes: {
               name: 'Autre projet',
               illustrationUrlSuffix: 'illustration/2/',
+              businessAddressCountryCode: 'fr',
             },
             relationships: {},
           },

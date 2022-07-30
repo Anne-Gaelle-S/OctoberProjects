@@ -5,6 +5,7 @@ export default class ProjectModel extends Model {
   @attr() name;
   @attr() status;
   @attr() illustrationUrlSuffix;
+  @attr() businessAddressCountryCode;
 
   get illustrationUrl() {
     return `${ENV.APP.ILLUSTRATION_URL_PREFIX}${this.illustrationUrlSuffix}`;

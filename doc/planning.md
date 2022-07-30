@@ -6,7 +6,7 @@
 
 Pour les projets en ligne, afficher :
 - [x] l'illustration de présentation
-- [ ] le drapeau de l'origine du projet
+- [x] le drapeau de l'origine du projet
 - [ ] note d'indice de confiance
 - [ ] la date de création
 - [ ] le pourcentage de ?
@@ -16,7 +16,7 @@ Pour les projets en ligne, afficher :
 
 Pour les projets financés par leur status, afficher :
 - [x] l'illustration de présentation
-- [ ] le drapeau de l'origine du projet
+- [x] le drapeau de l'origine du projet
 - [ ] note d'indice de confiance
 - [ ] la date de création
 - [ ] le pourcentage de ?

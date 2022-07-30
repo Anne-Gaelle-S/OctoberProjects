@@ -3,12 +3,20 @@
 <h2>{{@model.onlineProjects.length}} projects online</h2>
 {{#each @model.onlineProjects as |onlineProject|}}
   <img src={{onlineProject.illustrationUrl}} alt="" role="none" />
+  <img
+    src="{{this.rootURL}}/icon-flag-{{onlineProject.businessAddressCountryCode}}.svg"
+    alt="{{onlineProject.name}}'s business country flag ({{onlineProject.businessAddressCountryCode}})"
+  />
   <h3>{{onlineProject.name}}</h3>
 {{/each}}
 
 <h2>Financed projects</h2>
 {{#each @model.financedProjects as |financedProject|}}
   <img src={{financedProject.illustrationUrl}} alt="" role="none" />
+  <img
+    src="{{this.rootURL}}/icon-flag-{{financedProject.businessAddressCountryCode}}.svg"
+    alt="{{financedProject.name}}'s business country flag ({{financedProject.businessAddressCountryCode}})"
+  />
   <h3>{{financedProject.name}}</h3>
 {{/each}}
 
