@@ -1,5 +1,9 @@
 .projects__title {
   text-align: center;
+  font-size: 1.875rem;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
 .projects__online-projects-container {
@@ -8,4 +12,12 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 0 20px;
+}
+
+.projects__financed-projects-container {
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 20px 20px 20px;
 }

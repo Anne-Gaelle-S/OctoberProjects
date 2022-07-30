@@ -1,13 +1,41 @@
-<img src={{@financedProject.illustrationUrl}} alt="" role="none" />
-<img
-  src="{{this.rootURL}}/icon-flag-{{@financedProject.businessAddressCountryCode}}.svg"
-  alt="{{@financedProject.name}}'s business country flag ({{@financedProject.businessAddressCountryCode}})"
-/>
+<div class="financed-project-card">
+  <div class="financed-project-card-illustration-container">
+    <img
+      class="financed-project-card-illustration-container__illustration"
+      src={{@financedProject.illustrationUrl}}
+      alt=""
+      role="none"
+    />
+  </div>
+  <div class="financed-project-card-information-section">
+    <img
+      class="financed-project-card-information-section__flag"
+      src="{{this.rootURL}}/icon-flag-{{@financedProject.businessAddressCountryCode}}.svg"
+      alt="{{@financedProject.name}}'s business country flag ({{@financedProject.businessAddressCountryCode}})"
+    />
 
-<h3>{{@financedProject.name}}</h3>
-<p>{{@financedProject.rate}}% • {{@financedProject.loanDuration}} months</p>
+    <header class="financed-project-card-information-section-header">
+      <h3 class="financed-project-card-information-section-header__title">
+        {{@financedProject.name}}
+      </h3>
+      <p class="financed-project-card-information-section-header__loan">
+        {{@financedProject.rate}}% • {{@financedProject.loanDuration}} months
+      </p>
+    </header>
 
-<p>€ {{@financedProject.amount}}</p>
+    <div class="financed-project-card-information-section-centered-section">
+      <p class="financed-project-card-information-section-centered-section__amount">
+        € {{@financedProject.amount}}
+      </p>
+    </div>
 
-<p>{{@financedProject.durationSinceOnlineInMonths}} months ago</p>
-<p>{{@financedProject.grade}}</p>
+    <div class="financed-project-card-information-section-right-section">
+      <p class="financed-project-card-information-section-right-section__duration">
+        {{@financedProject.durationSinceOnlineInMonths}} months ago
+      </p>
+      <p class="financed-project-card-information-section-right-section__grade">
+        {{@financedProject.grade}}
+      </p>
+    </div>
+  </div>
+</div>

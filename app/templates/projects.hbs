@@ -7,9 +7,11 @@
   {{/each}}
 </div>
 
-<h2>Financed projects</h2>
-{{#each @model.financedProjects as |financedProject|}}
-  <FinancedProjectCard @financedProject={{financedProject}} />
-{{/each}}
+<h2 class="projects__title">Financed projects</h2>
+<div class="projects__financed-projects-container">
+  {{#each @model.financedProjects as |financedProject|}}
+    <FinancedProjectCard @financedProject={{financedProject}} />
+  {{/each}}
+</div>
 
 {{outlet}}

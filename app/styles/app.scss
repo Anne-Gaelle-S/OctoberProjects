@@ -3,14 +3,18 @@
 @import 'normalize';
 
 @import "globals/colors";
+@import "globals/fonts";
+@import "globals/rate-indicators";
 
 @import "pages/projects";
 
+@import "components/financed-project-card";
 @import "components/online-project-card";
 
 html {
   background-color: $light-grey;
   color: $soft-black;
+  font-family: Arial, sans-serif;
 }
 
 * {
