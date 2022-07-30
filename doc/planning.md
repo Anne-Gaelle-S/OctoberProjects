@@ -10,7 +10,7 @@ Pour les projets en ligne, afficher :
 - [x] note d'indice de confiance
 - [x] la date de création
 - [ ] le pourcentage de ?
-- [ ] la description
+- [x] la description
 - [ ] la durée et le coût
 - [ ] un lien vers les détails
 

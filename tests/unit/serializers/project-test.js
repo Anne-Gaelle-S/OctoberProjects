@@ -11,8 +11,19 @@ module('Unit | Serializer | project', function (hooks) {
 
       const store = this.owner.lookup('service:store');
       const primaryModelClass = {};
+
       const onlineDate1 = new Date('2022-02-02');
       const onlineDate2 = new Date('2022-03-03');
+
+      const englishDescription1 = new Array(9);
+      englishDescription1[5] = {
+        value: '<p>The company request 500 000 €... </p>',
+      };
+      const englishDescription2 = new Array(9);
+      englishDescription2[5] = {
+        value: '<p>The company request 330 000 €... </p>',
+      };
+
       const payload = {
         projects: [
           {
@@ -22,6 +33,7 @@ module('Unit | Serializer | project', function (hooks) {
             business: { address: { country: 'nl' } },
             onlineDate: onlineDate1,
             grade: 'A+',
+            description: { en: englishDescription1 },
           },
           {
             id: 'b2',
@@ -30,9 +42,11 @@ module('Unit | Serializer | project', function (hooks) {
             business: { address: { country: 'fr' } },
             onlineDate: onlineDate2,
             grade: 'B-',
+            description: { en: englishDescription2 },
           },
         ],
       };
+
       const id = null;
       const requestType = 'findAll';
 
@@ -57,6 +71,7 @@ module('Unit | Serializer | project', function (hooks) {
               businessAddressCountryCode: 'nl',
               onlineDate: onlineDate1,
               grade: 'A+',
+              descriptionWithHtml: '<p>The company request 500 000 €... </p>',
             },
             relationships: {},
           },
@@ -69,6 +84,7 @@ module('Unit | Serializer | project', function (hooks) {
               businessAddressCountryCode: 'fr',
               onlineDate: onlineDate2,
               grade: 'B-',
+              descriptionWithHtml: '<p>The company request 330 000 €... </p>',
             },
             relationships: {},
           },
