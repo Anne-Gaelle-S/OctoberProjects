@@ -26,6 +26,8 @@ module('Integration | Component | online-project-card', function (hooks) {
       grade: 'A+',
       descriptionWithHtml: '<p>Some text</p>',
       rate: 3.66,
+      loanDuration: 24,
+      amount: 880000,
     });
     this.set('project', project);
 
@@ -41,6 +43,7 @@ module('Integration | Component | online-project-card', function (hooks) {
     assert.dom(screen.getByText('Some text')).exists();
 
     assert.dom(screen.getByText('3.66 %')).exists();
+    assert.dom(screen.getByText('24 months • € 880000')).exists();
     assert.dom(screen.getByText('A+')).exists();
 
     assert.dom(screen.getByText('4 months ago')).exists();

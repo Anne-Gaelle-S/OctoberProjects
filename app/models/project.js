@@ -14,6 +14,8 @@ export default class ProjectModel extends Model {
   @attr() grade;
   @attr() descriptionWithHtml;
   @attr() rate;
+  @attr() loanDuration;
+  @attr() amount;
 
   get illustrationUrl() {
     return `${ENV.APP.ILLUSTRATION_URL_PREFIX}${this.illustrationUrlSuffix}`;

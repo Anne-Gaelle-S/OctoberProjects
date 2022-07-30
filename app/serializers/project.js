@@ -18,6 +18,8 @@ export default class ProjectSerializer extends JSONAPISerializer {
           grade: project.grade,
           'description-with-html': project.description?.en[5]?.value,
           rate: project.rate,
+          'loan-duration': project.loanDuration,
+          amount: project.amount,
         },
       };
     });

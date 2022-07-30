@@ -11,7 +11,7 @@ Pour les projets en ligne, afficher :
 - [x] la date de création
 - [x] le pourcentage de ?
 - [x] la description
-- [ ] la durée et le coût
+- [x] la durée et le coût
 - [ ] un lien vers les détails
 
 Pour les projets financés par leur status, afficher :
