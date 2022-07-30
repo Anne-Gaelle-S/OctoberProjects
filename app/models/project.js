@@ -13,6 +13,7 @@ export default class ProjectModel extends Model {
   @attr() onlineDate;
   @attr() grade;
   @attr() descriptionWithHtml;
+  @attr() rate;
 
   get illustrationUrl() {
     return `${ENV.APP.ILLUSTRATION_URL_PREFIX}${this.illustrationUrlSuffix}`;

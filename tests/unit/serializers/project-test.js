@@ -34,6 +34,7 @@ module('Unit | Serializer | project', function (hooks) {
             onlineDate: onlineDate1,
             grade: 'A+',
             description: { en: englishDescription1 },
+            rate: 3.95,
           },
           {
             id: 'b2',
@@ -43,6 +44,7 @@ module('Unit | Serializer | project', function (hooks) {
             onlineDate: onlineDate2,
             grade: 'B-',
             description: { en: englishDescription2 },
+            rate: 6.5,
           },
         ],
       };
@@ -72,6 +74,7 @@ module('Unit | Serializer | project', function (hooks) {
               onlineDate: onlineDate1,
               grade: 'A+',
               descriptionWithHtml: '<p>The company request 500 000 €... </p>',
+              rate: 3.95,
             },
             relationships: {},
           },
@@ -85,6 +88,7 @@ module('Unit | Serializer | project', function (hooks) {
               onlineDate: onlineDate2,
               grade: 'B-',
               descriptionWithHtml: '<p>The company request 330 000 €... </p>',
+              rate: 6.5,
             },
             relationships: {},
           },

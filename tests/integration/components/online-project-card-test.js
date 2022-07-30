@@ -25,6 +25,7 @@ module('Integration | Component | online-project-card', function (hooks) {
       onlineDate: new Date('2022-02-01'),
       grade: 'A+',
       descriptionWithHtml: '<p>Some text</p>',
+      rate: 3.66,
     });
     this.set('project', project);
 
@@ -32,12 +33,16 @@ module('Integration | Component | online-project-card', function (hooks) {
     await render(hbs`<OnlineProjectCard @onlineProject={{this.project}} />`);
 
     // then
-    assert.dom(screen.getByRole('heading', { name: 'Project 1' })).exists();
     assert
       .dom(screen.getByAltText("Project 1's business country flag (fr)"))
       .exists();
+
+    assert.dom(screen.getByRole('heading', { name: 'Project 1' })).exists();
     assert.dom(screen.getByText('Some text')).exists();
+
+    assert.dom(screen.getByText('3.66 %')).exists();
     assert.dom(screen.getByText('A+')).exists();
+
     assert.dom(screen.getByText('4 months ago')).exists();
   });
 });

@@ -9,7 +9,7 @@ Pour les projets en ligne, afficher :
 - [x] le drapeau de l'origine du projet
 - [x] note d'indice de confiance
 - [x] la date de création
-- [ ] le pourcentage de ?
+- [x] le pourcentage de ?
 - [x] la description
 - [ ] la durée et le coût
 - [ ] un lien vers les détails

@@ -17,6 +17,7 @@ export default class ProjectSerializer extends JSONAPISerializer {
           'online-date': project.onlineDate,
           grade: project.grade,
           'description-with-html': project.description?.en[5]?.value,
+          rate: project.rate,
         },
       };
     });
