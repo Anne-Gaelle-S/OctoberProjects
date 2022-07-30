@@ -37,6 +37,7 @@ module('Unit | Serializer | project', function (hooks) {
             rate: 3.95,
             loanDuration: 36,
             amount: 500000,
+            totalInvested: 300000,
           },
           {
             id: 'b2',
@@ -49,6 +50,7 @@ module('Unit | Serializer | project', function (hooks) {
             rate: 6.5,
             loanDuration: 24,
             amount: 330000,
+            totalInvested: 100000,
           },
         ],
       };
@@ -81,6 +83,7 @@ module('Unit | Serializer | project', function (hooks) {
               rate: 3.95,
               loanDuration: 36,
               amount: 500000,
+              totalInvested: 300000,
             },
             relationships: {},
           },
@@ -97,6 +100,7 @@ module('Unit | Serializer | project', function (hooks) {
               rate: 6.5,
               loanDuration: 24,
               amount: 330000,
+              totalInvested: 100000,
             },
             relationships: {},
           },

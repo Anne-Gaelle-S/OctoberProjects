@@ -16,6 +16,7 @@ export default class ProjectModel extends Model {
   @attr() rate;
   @attr() loanDuration;
   @attr() amount;
+  @attr() totalInvested;
 
   get illustrationUrl() {
     return `${ENV.APP.ILLUSTRATION_URL_PREFIX}${this.illustrationUrlSuffix}`;
@@ -27,5 +28,13 @@ export default class ProjectModel extends Model {
 
   get description() {
     return htmlSafe(this.descriptionWithHtml);
+  }
+
+  get restToFinance() {
+    return this.amount - this.totalInvested;
+  }
+
+  get isFullyFinanced() {
+    return this.restToFinance <= 0;
   }
 }

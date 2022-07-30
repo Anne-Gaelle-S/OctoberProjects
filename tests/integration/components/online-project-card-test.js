@@ -48,4 +48,42 @@ module('Integration | Component | online-project-card', function (hooks) {
 
     assert.dom(screen.getByText('4 months ago')).exists();
   });
+
+  test('it renders "See the project" link if project is fully financed', async function (assert) {
+    // given
+
+    const store = this.owner.lookup('service:store');
+    const project = store.createRecord('project', {
+      name: 'Project 1',
+      amount: 880000,
+      totalInvested: 880000,
+    });
+    this.set('project', project);
+
+    // when
+    await render(hbs`<OnlineProjectCard @onlineProject={{this.project}} />`);
+
+    // then
+    assert.dom(screen.getByRole('link', { name: 'See the project' })).exists();
+  });
+
+  test('it renders a link with the rest to finance', async function (assert) {
+    // given
+
+    const store = this.owner.lookup('service:store');
+    const project = store.createRecord('project', {
+      name: 'Project 1',
+      amount: 500000,
+      totalInvested: 400000,
+    });
+    this.set('project', project);
+
+    // when
+    await render(hbs`<OnlineProjectCard @onlineProject={{this.project}} />`);
+
+    // then
+    assert
+      .dom(screen.getByRole('link', { name: '€ 100000 to finance' }))
+      .exists();
+  });
 });

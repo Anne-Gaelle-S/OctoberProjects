@@ -11,4 +11,9 @@
 <p>{{@onlineProject.loanDuration}} months • € {{@onlineProject.amount}}</p>
 <p>{{@onlineProject.grade}}</p>
 
+{{#if @onlineProject.isFullyFinanced}}
+  <LinkTo @route="project" @model={{@onlineProject.id}}>See the project</LinkTo>
+{{else}}
+  <LinkTo @route="project" @model={{@onlineProject.id}}>€ {{@onlineProject.restToFinance}} to finance</LinkTo>
+{{/if}}
 <p>{{@onlineProject.durationSinceOnlineInMonths}} months ago</p>

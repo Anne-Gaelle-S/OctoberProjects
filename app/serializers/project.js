@@ -20,6 +20,7 @@ export default class ProjectSerializer extends JSONAPISerializer {
           rate: project.rate,
           'loan-duration': project.loanDuration,
           amount: project.amount,
+          'total-invested': project.totalInvested,
         },
       };
     });

@@ -12,7 +12,7 @@ Pour les projets en ligne, afficher :
 - [x] le pourcentage de ?
 - [x] la description
 - [x] la durée et le coût
-- [ ] un lien vers les détails
+- [x] un lien vers les détails
 
 Pour les projets financés par leur status, afficher :
 - [x] l'illustration de présentation
