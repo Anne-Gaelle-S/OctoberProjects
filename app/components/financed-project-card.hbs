@@ -1,4 +1,4 @@
-<div class="financed-project-card">
+<article class="financed-project-card">
   <div class="financed-project-card-illustration-container">
     <img
       class="financed-project-card-illustration-container__illustration"
@@ -34,8 +34,8 @@
         {{@financedProject.durationSinceOnlineInMonths}} months ago
       </p>
       <p class="financed-project-card-information-section-right-section__grade">
-        {{@financedProject.grade}}
+        <span class="grade-indicators--{{@financedProject.litteralGradeIndicator}}" />{{@financedProject.grade}}
       </p>
     </div>
   </div>
-</div>
+</article>

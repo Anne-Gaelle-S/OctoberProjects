@@ -3,6 +3,15 @@ import ENV from './../config/environment';
 import { inject as service } from '@ember/service';
 import { htmlSafe } from '@ember/template';
 
+const gradeToLitteralGrade = new Map([
+  ['A+', 'A-plus'],
+  ['A', 'A'],
+  ['B', 'B'],
+  ['B-', 'B-minus'],
+  ['C', 'C'],
+  ['C-', 'C-minus'],
+]);
+
 export default class ProjectModel extends Model {
   @service date;
 
@@ -36,5 +45,9 @@ export default class ProjectModel extends Model {
 
   get isFullyFinanced() {
     return this.restToFinance <= 0;
+  }
+
+  get litteralGradeIndicator() {
+    return gradeToLitteralGrade.get(this.grade);
   }
 }

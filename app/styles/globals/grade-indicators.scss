@@ -1,0 +1,41 @@
+@mixin gradeIndicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+  border-radius: 50%;
+  
+}
+
+.grade-indicators--A-plus {
+  @include gradeIndicator();
+  border: 3px solid $green;
+  background-color: $white;
+}
+
+.grade-indicators--A {
+  @include gradeIndicator();
+  background-color: $green;
+}
+
+.grade-indicators--B {
+  @include gradeIndicator();
+  border: 3px solid $orange;
+  background-color: $white;
+}
+
+.grade-indicators--B-minus {
+  @include gradeIndicator();
+  background-color: $orange;
+}
+
+.grade-indicators--C {
+  @include gradeIndicator();
+  background-color: $red;
+}
+
+.grade-indicators--C-minus {
+  @include gradeIndicator();
+  border: 3px solid $red;
+  background-color: $white;
+}

@@ -1,4 +1,4 @@
-<div class="online-project-card">
+<article class="online-project-card">
   <img class="online-project-card__illustration" src={{@onlineProject.illustrationUrl}} alt="" role="none" />
   <div class="online-project-card-information-section">
     <img
@@ -13,14 +13,12 @@
     </header>
 
     <div class="online-project-card-information-section-centered-section">
-      <p class="online-project-card-information-section-centered-section__rate">
-        {{@onlineProject.rate}} %
-      </p>
+      <p class="online-project-card-information-section-centered-section__rate">{{@onlineProject.rate}} %</p>
       <p class="online-project-card-information-section-centered-section__loan">
         {{@onlineProject.loanDuration}} months • € {{@onlineProject.amount}}
       </p>
       <p class="online-project-card-information-section-centered-section__grade">
-        {{@onlineProject.grade}}
+        <span class="grade-indicators--{{@onlineProject.litteralGradeIndicator}}" />{{@onlineProject.grade}}
       </p>
     </div>
 
@@ -33,4 +31,4 @@
       <p>{{@onlineProject.durationSinceOnlineInMonths}} months ago</p>
     </div>
   </div>
-</div>
+</article>
