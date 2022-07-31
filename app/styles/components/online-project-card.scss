@@ -1,6 +1,5 @@
 .online-project-card {
   height: 300px;
-  width: 800px;
   background-color: $white;
   box-shadow: 0px 0px 2px $soft-black;
   border-radius: 4px;
@@ -15,6 +14,11 @@
     object-fit: cover;
     position: absolute;
     z-index: 1;
+  }
+
+  @include isDeviceTablet() {
+    height: 300px;
+    width: 800px;
   }
 }
 
@@ -35,14 +39,25 @@
   }
 
   &__header {
-    width: 300px;
+    @include isDeviceTablet() {
+      width: 300px;
+    }
 
     h3 {
+      width: 100px;
       margin: 0;
       margin-bottom: 16px;
       text-overflow: ellipsis;
       overflow: hidden;
-      white-space: nowrap;
+      white-space: wrap;
+      margin-right: 6px;
+      font-size: 1rem;
+
+      @include isDeviceTablet() {
+        width: initial;
+        white-space: no-wrap;
+        font-size: inherit;
+      }
     }
 
     p {
@@ -58,6 +73,10 @@
       box-orient: vertical;
 
       @include paragraphInformation();
+
+      @include isDeviceMobile() {
+        display: none;
+      }
     }
   }
 
@@ -65,11 +84,20 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 180px;
+    
+    @include isDeviceTablet() {
+      width: 180px;
+    }
 
     &__rate {
-      font-size: 1.75rem;
       margin: 0;
+      font-size: 1.125rem;
+      font-weight: bold;
+
+      @include isDeviceTablet() {
+        font-size: 1.75rem;
+        font-weight: inherit;
+      }
     }
 
     &__loan {
@@ -88,13 +116,21 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-items: flex-end;
     align-items: flex-end;
 
     a {
       color: $blue;
       font-weight: bold;
       text-decoration: none;
+      font-size: 0.875rem;
+      max-width: 80px;
+      margin-bottom: 6px;
+
+      @include isDeviceTablet() {
+        font-size: inherit;
+        max-width: inherit;
+        margin-bottom: 14px;
+      }
 
       &::after {
         content: ' 〉';
@@ -105,6 +141,7 @@
     }
 
     p {
+      margin: 0;
       @include paragraphInformation();
     }
   }
